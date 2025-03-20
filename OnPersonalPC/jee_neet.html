@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE/NEET Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <section class="jee-neet-section">
+        <h1>Select Your Exam</h1>
+        <div class="exam-options">
+            <button onclick="showOptions('jee-options')">JEE</button>
+            <button onclick="showOptions('neet-options')">NEET</button>
+        </div>
+
+        <!-- JEE Section -->
+        <div id="jee-options" class="options-container" style="display: none;">
+            <h2>JEE Subjects</h2>
+            <select id="jee-subject-dropdown" onchange="displayJEEPYQs()">
+                <option value="">-- Select Subject --</option>
+                <option value="physics">Physics</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="maths">Maths</option>
+            </select>
+            <div id="jee-pyqs" style="display: none;">
+                <h3>Year-wise PYQs (2010 - 2025)</h3>
+                <ul id="jee-year-list"></ul>
+            </div>
+        </div>
+
+        <!-- NEET Section -->
+        <div id="neet-options" class="options-container" style="display: none;">
+            <h2>NEET Subjects</h2>
+            <select id="neet-subject-dropdown" onchange="displayNEETPYQs()">
+                <option value="">-- Select Subject --</option>
+                <option value="biology">Biology</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="physics">Physics</option>
+            </select>
+            <div id="neet-pyqs" style="display: none;">
+                <h3>Year-wise PYQs (2010 - 2025)</h3>
+                <ul id="neet-year-list"></ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showOptions(id) {
+            document.getElementById('jee-options').style.display = 'none';
+            document.getElementById('neet-options').style.display = 'none';
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function displayJEEPYQs() {
+            const subject = document.getElementById('jee-subject-dropdown').value;
+            const pyqs = document.getElementById('jee-pyqs');
+            const yearList = document.getElementById('jee-year-list');
+            
+            if (subject) {
+                pyqs.style.display = 'block';
+                yearList.innerHTML = '';
+                for (let year = 2010; year <= 2025; year++) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${subject.toUpperCase()} PYQs for ${year}`;
+                    yearList.appendChild(listItem);
+                }
+            } else {
+                pyqs.style.display = 'none';
+            }
+        }
+
+        function displayNEETPYQs() {
+            const subject = document.getElementById('neet-subject-dropdown').value;
+            const pyqs = document.getElementById('neet-pyqs');
+            const yearList = document.getElementById('neet-year-list');
+            
+            if (subject) {
+                pyqs.style.display = 'block';
+                yearList.innerHTML = '';
+                for (let year = 2010; year <= 2025; year++) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${subject.toUpperCase()} PYQs for ${year}`;
+                    yearList.appendChild(listItem);
+                }
+            } else {
+                pyqs.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

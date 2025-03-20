@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+   
+}
+
+.subject {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.subject h2 {
+    color: #333;
+    margin-top: 0;
+}
+
+.chapters {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.chapters li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.chapters li a {
+    text-decoration: none;
+    color: #4CAF50;
+    transition: color 0.3s;
+}
+
+.chapters li a:hover {
+    color: #388E3C;
+}
+.center-text {
+    text-align: center;
+}
